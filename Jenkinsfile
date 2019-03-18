@@ -11,10 +11,6 @@ node {
         checkout scm
     }
 
-    stage('npm install') {
-        sh "npm install"
-    }
-
     stage('clean') {
         sh "./mvnw clean"
     }
