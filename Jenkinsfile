@@ -19,10 +19,6 @@ node {
         sh "./mvnw test"
     }
 
-    stage('frontend tests') {
-        sh "gulp test"
-    }
-
     stage('packaging') {
         sh "./mvnw package -Pprod -DskipTests"
     }
