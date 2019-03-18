@@ -36,4 +36,5 @@ node {
 
     stage('code quality') {
         sh "./mvnw sonar:sonar -Dsonar.host.url=http://raspberrysqlserver.ddns.net:9000 -Dsonar.login=f088a92966698923a44e0b75731a72f28d7b2434"
+    }
 }
