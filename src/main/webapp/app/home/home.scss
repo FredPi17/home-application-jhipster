@@ -10,6 +10,37 @@ Main page styles
     background-size: contain;
 }
 
+.meteo {
+    display: inline-block;
+    background: url('../../content/images/home/meteo.png') no-repeat center top;
+    background-size: contain;
+}
+
+.camera {
+    display: inline-block;
+    background: url('../../content/images/home/cameras.png') no-repeat center top;
+    background-size: contain;
+}
+
+.calendrier {
+    display: inline-block;
+    background: url('../../content/images/home/calendrier.png') no-repeat center top;
+    background-size: contain;
+}
+
+.cuisine {
+    display: inline-block;
+    background: url('../../content/images/home/cuisine.png') no-repeat center top;
+    background-size: contain;
+}
+
+h4 {
+    background-color: #343a40;
+    color: white;
+    font-size: 1.25rem;
+    padding: 10px 0 10px 0;
+}
+
 /* wait autoprefixer update to allow simple generation of high pixel density media query */
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
     only screen and (-moz-min-device-pixel-ratio: 2),

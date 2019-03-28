@@ -1,0 +1,20 @@
+{
+    "homeApplicationApp": {
+        "courbes": {
+            "home": {
+                "title": "Courbes",
+                "createLabel": "Créer un nouveau Courbes",
+                "createOrEditLabel": "Créer ou éditer un Courbes"
+            },
+            "created": "Un nouveau Courbes a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Courbes avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Courbes avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Courbes {{ id }} ?"
+            },
+            "detail": {
+                "title": "Courbes"
+            }
+        }
+    }
+}

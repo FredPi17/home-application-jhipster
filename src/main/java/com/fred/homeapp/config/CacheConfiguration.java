@@ -41,6 +41,9 @@ public class CacheConfiguration {
             cm.createCache(com.fred.homeapp.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.fred.homeapp.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.fred.homeapp.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.fred.homeapp.domain.Meteo.class.getName(), jcacheConfiguration);
+            cm.createCache(com.fred.homeapp.domain.Courbes.class.getName(), jcacheConfiguration);
+            cm.createCache(com.fred.homeapp.domain.Ville.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

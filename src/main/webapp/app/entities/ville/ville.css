@@ -1,0 +1,29 @@
+.block {
+    display: block;
+    width: 100%;
+}
+.grey {
+    color: #9e9e9e !important;
+}
+.text-bold-600 {
+    font-weight: 600;
+}
+.font-small-1 {
+    font-size: 0.7rem !important;
+}
+.float-right {
+    float: right !important;
+}
+.align-middle {
+    vertical-align: middle !important;
+}
+.bg-blue-grey.bg-lighten-2,
+.btn-blue-grey.btn-lighten-2 {
+    background-color: #90a4ae !important;
+}
+.bg-blue-grey {
+    background-color: #607d8b !important;
+}
+.font-medium-4 {
+    font-size: 1.4rem !important;
+}

@@ -1,0 +1,82 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="homeApplicationApp.courbes.home.title">Courbes</span>
+        <div class="btn-group float-right" role="group" aria-label="Menu météo">
+            <button type="button" class="btn btn-secondary" [routerLink]="['/meteo']">Météo</button>
+            <button type="button" class="btn btn-secondary disabled" [routerLink]="['/courbes']">Courbes</button>
+            <button type="button" class="btn btn-secondary" [routerLink]="['/ville']">Ville</button>
+        </div>
+    </h2>
+    <h3 id="page-description">
+        <span>Votre recherche</span>
+        <div class="btn-group center" role="group" aria-label="Menu choix courbes">
+            <button type="button" class="btn btn-primary" (click)="loadData(60)">1 heure</button>
+            <button type="button" class="btn btn-primary" (click)="loadData(1440)">1 jour</button>
+        </div>
+    </h3>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="container-fluid">
+
+            <div class="card">
+                <div class="card-header text-center">Bureau</div>
+                <div class="card-body">
+                    <canvas
+                        baseChart
+                        [chartType]="'line'"
+                        [datasets]="chartOptionsBureau"
+                        [labels]="chartLabelsBureau"
+                        [options]="chartOptions"
+                        [legend]="true"
+                        height="100px">
+                    </canvas>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header text-center">Salon</div>
+                <div class="card-body">
+                    <canvas
+                        baseChart
+                        [chartType]="'line'"
+                        [datasets]="chartOptionsSalon"
+                        [labels]="chartLabelsSalon"
+                        [options]="chartOptions"
+                        [legend]="true"
+                        height="100px">
+                    </canvas>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="card-header text-center">Exterieur</div>
+                <div class="card-body">
+                    <canvas
+                        baseChart
+                        [chartType]="'line'"
+                        [datasets]="chartOptionsExterieur"
+                        [labels]="chartLabelExterieur"
+                        [options]="chartOptions"
+                        [legend]="true"
+                        height="100px">
+                    </canvas>
+                </div>
+
+            </div>
+            <div class="card">
+                <div class="card-header text-center">Serveur</div>
+                <div class="card-body">
+                    <canvas
+                        baseChart
+                        [chartType]="'line'"
+                        [datasets]="chartOptionsServeur"
+                        [labels]="chartLabelServeur"
+                        [options]="chartOptions"
+                        [legend]="true"
+                        height="100px">
+                    </canvas>
+                </div>
+
+            </div>
+    </div>
+
+</div>

@@ -1,0 +1,107 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="homeApplicationApp.ville.home.title">Villes</span>
+        <div class="btn-group float-right" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary" [routerLink]="['/meteo']">Météo</button>
+            <button type="button" class="btn btn-secondary" routerLinkActive="active" [routerLink]="['/courbes']">Courbes</button>
+            <button type="button" class="btn btn-secondary disabled" routerLinkActive="active" [routerLink]="['/ville']">Ville</button>
+        </div>
+    </h2>
+
+    <jhi-alert></jhi-alert>
+    <br/>
+
+    <span>Chercher une ville</span>
+    <input type="text" id="city" name="city" [(ngModel)]="city">
+    <input type="button" class="btn btn-light" value="Rechercher"  (click)="searchCity(city)">
+    <input type="button" class="btn btn-light" value="ICI" (click)="findMe()">
+    <br/>
+    <br/>
+
+
+    <div class="container">
+        <div class="col-xl-6 col-md-12 col-12">
+            <div class="card border-0 box-shadow-0">
+                <div class="card-content">
+                    <div class="weather-date position-relative">
+                        <div class="card-body bg-blue-grey bg-lighten-2">
+                            <div class="text-center">
+                                <img src="{{cityLogo}}" style="width: 40%; height: auto;">
+                            </div>
+                            <div class="weather-details text-center">
+                                <span class="font-medium-4 text-bold-500 blue-grey darken-4">{{cityName}}</span>
+                            </div>
+                        </div>
+                        <div class="card-footer p-0 border-0">
+                            <div class="table-responsive">
+                                <table class="table table-bordered mb-0" style="width: 100%;">
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="details-left float-left">
+                                                <span class="font-small-1 grey text-bold-600 block">Vent</span>
+                                                <span class="text-bold-500">{{cityWindSpeed}}KM/h</span>
+                                            </div>
+                                            <div class="float-right align-middle">
+                                                <img src="../../../content/images/ville/wind.svg" width="16" height="16"/>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="details-left float-left">
+                                                <span class="font-small-1 grey text-bold-600 block">Levé du soleil</span>
+                                                <span class="text-bold-500">{{citySunrise | date: 'dd/MM/yyyy - hh:mm '}}</span>
+                                            </div>
+                                            <div class="float-right align-middle">
+                                                <img src="../../../content/images/ville/sunrise.svg" width="16" height="16"/>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="details-left float-left">
+                                                <span class="font-small-1 grey text-bold-600 block">Couché du soleil</span>
+                                                <span class="text-bold-500">{{citySunset | date: 'dd/MM/yyyy - hh:mm '}}</span>
+                                            </div>
+                                            <div class="float-right align-middle">
+                                                <img src="../../../content/images/ville/sunset.svg" width="16" height="16"/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="details-left float-left">
+                                                <span class="font-small-1 grey text-bold-600 block">Température min</span>
+                                                <span class="text-bold-500">{{cityMinTemperature}}°C</span>
+                                            </div>
+                                            <div class="float-right align-middle">
+                                                <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="details-left float-left">
+                                                <span class="font-small-1 grey text-bold-600 block">Température actuelle</span>
+                                                <span class="text-bold-500">{{cityTemperature}}°C</span>
+                                            </div>
+                                            <div class="float-right align-middle">
+                                                <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="details-left float-left">
+                                                <span class="font-small-1 grey text-bold-600 block">Température max</span>
+                                                <span class="text-bold-500">{{cityMaxTemperature}}°C</span>
+                                            </div>
+                                            <div class="float-right align-middle">
+                                                <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

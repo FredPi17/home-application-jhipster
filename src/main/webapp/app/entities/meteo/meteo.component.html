@@ -1,0 +1,67 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="homeApplicationApp.meteo.home.title">Meteo</span>
+        <div class="btn-group float-right" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary disabled" [routerLink]="['/meteo']">Météo</button>
+            <button type="button" class="btn btn-secondary" routerLinkActive="active" [routerLink]="['/courbes']">Courbes</button>
+            <button type="button" class="btn btn-secondary" routerLinkActive="active" [routerLink]="['/ville']">Ville</button>
+        </div>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+
+    <div [ngSwitch]="isAuthenticated()">
+        <div *ngSwitchCase="true">
+
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <div class="card" style="margin-bottom: 20px;">
+                <div class="card-header ">Température salon</div>
+                <div class="card-body">{{thingspeakResponseSalon['0']['field1']}}°C</div>
+                <div class="card-footer">{{thingspeakResponseSalon['0']['created_at']}}</div>
+            </div>
+            <div class="card" style="margin-bottom: 20px;">
+                <div class="card-header">Température extérieure</div>
+                <div class="card-body">{{thingspeakResponseExterieur['0']['field1']}}°C</div>
+                <div class="card-footer">{{thingspeakResponseExterieur['0']['created_at']}}</div>
+            </div>
+            <div class="card" style="margin-bottom: 20px;">
+                <div class="card-header">Température bureau</div>
+                <div class="card-body">{{thingspeakResponseBureau['0']['field1']}}°C</div>
+                <div class="card-footer">{{thingspeakResponseBureau['0']['created_at']}}</div>
+            </div>
+            <div class="card">
+                <div class="card-header">Température serveur</div>
+                <div class="card-body">{{thingspeakResponseServeur['0']['field1']}}°C</div>
+                <div class="card-footer">{{thingspeakResponseServeur['0']['created_at']}}</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 text-center">
+            <div class="card" style="margin-bottom: 20px;">
+                <div class="card-header">Humidité salon</div>
+                <div class="card-body">{{thingspeakResponseSalon['0']['field2']}}%</div>
+                <div class="card-footer">{{thingspeakResponseSalon['0']['created_at']}}</div>
+            </div>
+            <div class="card" style="margin-bottom: 20px;">
+                <div class="card-header">Humidité extérieure</div>
+                <div class="card-body">{{thingspeakResponseExterieur['0']['field2']}}%</div>
+                <div class="card-footer">{{thingspeakResponseExterieur['0']['created_at']}}</div>
+            </div>
+            <div class="card" style="margin-bottom: 20px;">
+                <div class="card-header">Humidité bureau</div>
+                <div class="card-body">{{thingspeakResponseServeur['0']['field2']}}%</div>
+                <div class="card-footer">{{thingspeakResponseServeur['0']['created_at']}}</div>
+            </div>
+            <div class="card">
+                <div class="card-header">Humidité serveur</div>
+                <div class="card-body">{{thingspeakResponseBureau['0']['field2']}}%</div>
+                <div class="card-footer">{{thingspeakResponseBureau['0']['created_at']}}</div>
+            </div>
+        </div>
+    </div>
+        </div>
+        <div *ngSwitchCase="false" [ngSwitch]="redirect()">
+
+        </div>
+</div>
