@@ -7,15 +7,18 @@ import { JhiEventManager, JhiAlertService } from 'ng-jhipster';
 import { ICameras } from 'app/shared/model/cameras.model';
 import { AccountService } from 'app/core';
 import { CamerasService } from './cameras.service';
+import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'jhi-cameras',
-    templateUrl: './cameras.component.html'
+    templateUrl: './cameras.component.html',
+    styleUrls: ['../ville/bootstrap_extended.min.css', '../ville/custom-rtl.min.css', '../ville/ville.css']
 })
 export class CamerasComponent implements OnInit, OnDestroy {
     cameras: ICameras[];
     currentAccount: any;
     eventSubscriber: Subscription;
+    modalRef: NgbModalRef;
 
     constructor(
         protected camerasService: CamerasService,
@@ -61,5 +64,14 @@ export class CamerasComponent implements OnInit, OnDestroy {
 
     protected onError(errorMessage: string) {
         this.jhiAlertService.error(errorMessage, null, null);
+    }
+
+    delete(id: number) {
+        this.camerasService
+            .delete(id)
+            .toPromise()
+            .then(response => {
+                console.log(response);
+            });
     }
 }

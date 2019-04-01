@@ -1,18 +1,15 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="cameras">
-            <h2><span jhiTranslate="homeApplicationApp.cameras.detail.title">Cameras</span> {{cameras.id}}</h2>
+            <h2>{{cameras.name}}</h2>
             <hr>
             <jhi-alert-error></jhi-alert-error>
             <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="homeApplicationApp.cameras.name">Name</span></dt>
-                <dd>
-                    <span>{{cameras.name}}</span>
-                </dd>
-                <dt><span jhiTranslate="homeApplicationApp.cameras.link">Link</span></dt>
-                <dd>
-                    <span>{{cameras.link}}</span>
-                </dd>
+                <div class="center">
+                    <dd>
+                        <img src="{{cameras.link}}" alt="video"/>
+                    </dd>
+                </div>
             </dl>
 
             <button type="submit"

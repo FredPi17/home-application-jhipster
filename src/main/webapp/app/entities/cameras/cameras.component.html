@@ -1,56 +1,51 @@
 <div>
     <h2 id="page-heading">
         <span jhiTranslate="homeApplicationApp.cameras.home.title">Cameras</span>
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-cameras" [routerLink]="['/cameras/new']">
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-cameras"
+                [routerLink]="['/cameras/new']">
             <fa-icon [icon]="'plus'"></fa-icon>
-            <span  jhiTranslate="homeApplicationApp.cameras.home.createLabel">
+            <span jhiTranslate="homeApplicationApp.cameras.home.createLabel">
             Create new Cameras
             </span>
         </button>
     </h2>
     <jhi-alert></jhi-alert>
     <br/>
-    <div class="table-responsive" *ngIf="cameras">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-            <th><span jhiTranslate="global.field.id">ID</span></th>
-            <th><span jhiTranslate="homeApplicationApp.cameras.name">Name</span></th>
-            <th><span jhiTranslate="homeApplicationApp.cameras.link">Link</span></th>
-            <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr *ngFor="let cameras of cameras ;trackBy: trackId">
-                <td><a [routerLink]="['/cameras', cameras.id, 'view' ]">{{cameras.id}}</a></td>
-                <td>{{cameras.name}}</td>
-                <td>{{cameras.link}}</td>
-                <td class="text-right">
-                    <div class="btn-group flex-btn-group-container">
-                        <button type="submit"
-                                [routerLink]="['/cameras', cameras.id, 'view' ]"
-                                class="btn btn-info btn-sm">
-                            <fa-icon [icon]="'eye'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
-                        </button>
-                        <button type="submit"
-                                [routerLink]="['/cameras', cameras.id, 'edit']"
-                                class="btn btn-primary btn-sm">
-                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
-                        </button>
-                        <button type="submit"
-                                [routerLink]="['/', 'cameras', { outlets: { popup: cameras.id + '/delete'} }]"
-                                replaceUrl="true"
-                                queryParamsHandling="merge"
-                                class="btn btn-danger btn-sm">
-                            <fa-icon [icon]="'times'"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
-                        </button>
+
+    <div class="row">
+        <div *ngFor="let cameras of cameras ;trackBy: trackId" class="col-xl-6 col-md-12 col-12">
+            <div class="card border-0 box-shadow-0">
+                <div class="card-header">
+                    <button aria-label="Edit" data-dismiss="modal" class="edit btn" type="button"
+                            [routerLink]="['/cameras', cameras.id, 'edit']">
+                        <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                    </button>
+                    <button aria-label="Close" data-dismiss="modal" class="close btn" type="button"
+                            [routerLink]="['/', 'cameras', { outlets: { popup: cameras.id + '/delete'} }]">
+                        <fa-icon [icon]="'times'"></fa-icon>
+                    </button>
+                </div>
+                <div class="card-content">
+                    <div class="weather-date position-relative">
+                        <div class="card-body bg-lighten-2">
+                            <div class="text-center">
+                                <img src="{{cameras.link}}" style="width: 40%; height: auto;" alt="video">
+                            </div>
+                            <div class="weather-details text-center">
+                                <span class="font-medium-4 text-bold-500 blue-grey darken-4">{{cameras.name}}</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit"
+                                    [routerLink]="['/cameras', cameras.id, 'view' ]"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon [icon]="'eye'"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+                        </div>
                     </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
