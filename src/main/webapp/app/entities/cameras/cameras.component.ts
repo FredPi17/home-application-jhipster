@@ -10,7 +10,8 @@ import { CamerasService } from './cameras.service';
 
 @Component({
     selector: 'jhi-cameras',
-    templateUrl: './cameras.component.html'
+    templateUrl: './cameras.component.html',
+    styleUrls: ['../ville/bootstrap_extended.min.css', '../ville/custom-rtl.min.css', '../ville/ville.css']
 })
 export class CamerasComponent implements OnInit, OnDestroy {
     cameras: ICameras[];
