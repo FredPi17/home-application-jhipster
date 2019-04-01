@@ -13,7 +13,7 @@
                 "question": "Etes-vous certain de vouloir supprimer la caméra {{ id }} ?"
             },
             "detail": {
-                "title": "Caméras"
+                "title": "Caméra"
             },
             "name": "Nom",
             "link": "Lien"
