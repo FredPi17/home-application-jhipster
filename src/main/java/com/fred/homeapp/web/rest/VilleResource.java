@@ -122,6 +122,12 @@ public class VilleResource {
         return villeService.getDataFromVille(latitude, longitude, "");
     }
 
+    /**
+     * GET /villes/getVille/{cityName} : get data for the city
+     * @param cityName city name
+     * @return data for the city
+     * @throws Exception
+     */
     @GetMapping("/villes/getVille/{cityName}")
     public String getDataFromCityName(@PathVariable String cityName) throws Exception {
         log.debug("REST request to get weather for: {}", cityName);

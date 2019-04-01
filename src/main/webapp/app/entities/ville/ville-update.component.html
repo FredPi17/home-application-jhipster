@@ -9,6 +9,11 @@
                     <input type="text" class="form-control" id="id" name="id"
                         [(ngModel)]="ville.id" readonly />
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="homeApplicationApp.ville.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="ville.name" />
+                </div>
 
             </div>
             <div>

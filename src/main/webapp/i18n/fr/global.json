@@ -10,6 +10,7 @@
                 "meteo": "Meteo",
                 "courbes": "Courbes",
                 "ville": "Ville",
+                "cameras": "Cameras",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

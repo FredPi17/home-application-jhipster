@@ -1,0 +1,22 @@
+{
+    "homeApplicationApp": {
+        "cameras": {
+            "home": {
+                "title": "Caméras",
+                "createLabel": "Ajouter une caméra",
+                "createOrEditLabel": "Créer ou éditer une caméra"
+            },
+            "created": "Une nouvelle camera a été créée avec l'identifiant {{ param }}",
+            "updated": "La caméra avec l'identifiant {{ param }} a été mise à jour",
+            "deleted": "La caméra avec l'identifiant {{ param }} a été supprimée",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer la caméra {{ id }} ?"
+            },
+            "detail": {
+                "title": "Caméras"
+            },
+            "name": "Nom",
+            "link": "Lien"
+        }
+    }
+}

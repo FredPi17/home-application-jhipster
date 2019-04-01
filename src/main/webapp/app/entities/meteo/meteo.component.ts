@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 
 @Component({
     selector: 'jhi-meteo',
-    templateUrl: './meteo.component.html'
+    templateUrl: './meteo.component.html',
+    styleUrls: ['../ville/bootstrap_extended.min.css', '../ville/custom-rtl.min.css', '../ville/ville.css']
 })
 export class MeteoComponent implements OnInit, OnDestroy {
     meteos: IMeteo[];

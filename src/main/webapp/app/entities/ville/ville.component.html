@@ -20,82 +20,189 @@
 
 
     <div class="container">
-        <div class="col-xl-6 col-md-12 col-12">
-            <div class="card border-0 box-shadow-0">
-                <div class="card-content">
-                    <div class="weather-date position-relative">
-                        <div class="card-body bg-blue-grey bg-lighten-2">
-                            <div class="text-center">
-                                <img src="{{cityLogo}}" style="width: 40%; height: auto;">
+        <div class="row">
+            <div class="col-xl-6 col-md-12 col-12">
+                <div class="card border-0 box-shadow-0">
+                    <div class="card-header">
+                        <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">o</span>
+                        </button>
+                    </div>
+                    <div class="card-content">
+                        <div class="weather-date position-relative">
+                            <div class="card-body bg-blue-grey bg-lighten-2">
+                                <div class="text-center">
+                                    <img src="{{weatherCityObject.Logo}}" style="width: 40%; height: auto;">
+                                </div>
+                                <div class="weather-details text-center">
+                                    <span class="font-medium-4 text-bold-500 blue-grey darken-4">{{weatherCityObject.Name}}</span>
+                                </div>
                             </div>
-                            <div class="weather-details text-center">
-                                <span class="font-medium-4 text-bold-500 blue-grey darken-4">{{cityName}}</span>
+                            <div class="card-footer p-0 border-0">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered mb-0" style="width: 100%;">
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="details-left float-left">
+                                                    <span class="font-small-1 grey text-bold-600 block">Vent</span>
+                                                    <span class="text-bold-500">{{weatherCityObject.WindSpeed}}KM/h</span>
+                                                </div>
+                                                <div class="float-right align-middle">
+                                                    <img src="../../../content/images/ville/wind.svg" width="16" height="16"/>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="details-left float-left">
+                                                    <span class="font-small-1 grey text-bold-600 block">Levé du soleil</span>
+                                                    <span class="text-bold-500">{{weatherCityObject.Sunrise | date: 'dd/MM/yyyy - hh:mm '}}</span>
+                                                </div>
+                                                <div class="float-right align-middle">
+                                                    <img src="../../../content/images/ville/sunrise.svg" width="16" height="16"/>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="details-left float-left">
+                                                    <span class="font-small-1 grey text-bold-600 block">Couché du soleil</span>
+                                                    <span class="text-bold-500">{{weatherCityObject.Sunset | date: 'dd/MM/yyyy - hh:mm '}}</span>
+                                                </div>
+                                                <div class="float-right align-middle">
+                                                    <img src="../../../content/images/ville/sunset.svg" width="16" height="16"/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="details-left float-left">
+                                                    <span class="font-small-1 grey text-bold-600 block">Température min</span>
+                                                    <span class="text-bold-500">{{weatherCityObject.MinTemperature}}°C</span>
+                                                </div>
+                                                <div class="float-right align-middle">
+                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="details-left float-left">
+                                                    <span class="font-small-1 grey text-bold-600 block">Température actuelle</span>
+                                                    <span class="text-bold-500">{{weatherCityObject.Temperature}}°C</span>
+                                                </div>
+                                                <div class="float-right align-middle">
+                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="details-left float-left">
+                                                    <span class="font-small-1 grey text-bold-600 block">Température max</span>
+                                                    <span class="text-bold-500">{{weatherCityObject.MaxTemperature}}°C</span>
+                                                </div>
+                                                <div class="float-right align-middle">
+                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-                        <div class="card-footer p-0 border-0">
-                            <div class="table-responsive">
-                                <table class="table table-bordered mb-0" style="width: 100%;">
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="details-left float-left">
-                                                <span class="font-small-1 grey text-bold-600 block">Vent</span>
-                                                <span class="text-bold-500">{{cityWindSpeed}}KM/h</span>
-                                            </div>
-                                            <div class="float-right align-middle">
-                                                <img src="../../../content/images/ville/wind.svg" width="16" height="16"/>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="details-left float-left">
-                                                <span class="font-small-1 grey text-bold-600 block">Levé du soleil</span>
-                                                <span class="text-bold-500">{{citySunrise | date: 'dd/MM/yyyy - hh:mm '}}</span>
-                                            </div>
-                                            <div class="float-right align-middle">
-                                                <img src="../../../content/images/ville/sunrise.svg" width="16" height="16"/>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="details-left float-left">
-                                                <span class="font-small-1 grey text-bold-600 block">Couché du soleil</span>
-                                                <span class="text-bold-500">{{citySunset | date: 'dd/MM/yyyy - hh:mm '}}</span>
-                                            </div>
-                                            <div class="float-right align-middle">
-                                                <img src="../../../content/images/ville/sunset.svg" width="16" height="16"/>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <div class="details-left float-left">
-                                                <span class="font-small-1 grey text-bold-600 block">Température min</span>
-                                                <span class="text-bold-500">{{cityMinTemperature}}°C</span>
-                                            </div>
-                                            <div class="float-right align-middle">
-                                                <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="details-left float-left">
-                                                <span class="font-small-1 grey text-bold-600 block">Température actuelle</span>
-                                                <span class="text-bold-500">{{cityTemperature}}°C</span>
-                                            </div>
-                                            <div class="float-right align-middle">
-                                                <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="details-left float-left">
-                                                <span class="font-small-1 grey text-bold-600 block">Température max</span>
-                                                <span class="text-bold-500">{{cityMaxTemperature}}°C</span>
-                                            </div>
-                                            <div class="float-right align-middle">
-                                                <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngFor="let weather of weatherCityList; let i = index;" [attr.data-index]="i" class="col-xl-6 col-md-12 col-12">
+                <div class="card border-0 box-shadow-0">
+                    <div class="card-header">
+                        <button aria-label="Close" data-dismiss="modal" class="close" type="button" (click)="delete(weather.id)"><span aria-hidden="true">x</span>
+                        </button>
+                    </div>
+                    <div class="card-content">
+                        <div class="weather-date position-relative">
+                            <div class="card-body bg-blue-grey bg-lighten-2">
+                                <div class="text-center">
+                                    <img src="{{weather.Logo}}" style="width: 40%; height: auto;">
+                                </div>
+                                <div class="weather-details text-center">
+                                    <span class="font-medium-4 text-bold-500 blue-grey darken-4">{{weather.Name}}</span>
+                                </div>
+                            </div>
+                            <div class="card-footer p-0 border-0">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered mb-0" style="width: 100%;">
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="details-left float-left">
+                                                    <span class="font-small-1 grey text-bold-600 block">Vent</span>
+                                                    <span class="text-bold-500">{{weather.WindSpeed}}KM/h</span>
+                                                </div>
+                                                <div class="float-right align-middle">
+                                                    <img src="../../../content/images/ville/wind.svg" width="16" height="16"/>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="details-left float-left">
+                                                    <span class="font-small-1 grey text-bold-600 block">Levé du soleil</span>
+                                                    <span class="text-bold-500">{{weather.Sunrise | date: 'dd/MM/yyyy - hh:mm '}}</span>
+                                                </div>
+                                                <div class="float-right align-middle">
+                                                    <img src="../../../content/images/ville/sunrise.svg" width="16" height="16"/>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="details-left float-left">
+                                                    <span class="font-small-1 grey text-bold-600 block">Couché du soleil</span>
+                                                    <span class="text-bold-500">{{weather.Sunset | date: 'dd/MM/yyyy - hh:mm '}}</span>
+                                                </div>
+                                                <div class="float-right align-middle">
+                                                    <img src="../../../content/images/ville/sunset.svg" width="16" height="16"/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="details-left float-left">
+                                                    <span class="font-small-1 grey text-bold-600 block">Température min</span>
+                                                    <span class="text-bold-500">{{weather.MinTemperature}}°C</span>
+                                                </div>
+                                                <div class="float-right align-middle">
+                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="details-left float-left">
+                                                    <span class="font-small-1 grey text-bold-600 block">Température actuelle</span>
+                                                    <span class="text-bold-500">{{weather.Temperature}}°C</span>
+                                                </div>
+                                                <div class="float-right align-middle">
+                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="details-left float-left">
+                                                    <span class="font-small-1 grey text-bold-600 block">Température max</span>
+                                                    <span class="text-bold-500">{{weather.MaxTemperature}}°C</span>
+                                                </div>
+                                                <div class="float-right align-middle">
+                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-md-12 col-12">
+                <div class="card border-0 box-shadow-0">
+                    <div class="card-content">
+                        <div class="weather-date position-relative">
+                            <div class="card-body bg-lighten-2">
+                                <div class="text-center">
+                                    <img src="../../../content/images/ville/plus.svg" width="50" height="50" (click)="addCity()">
+                                </div>
                             </div>
                         </div>
                     </div>

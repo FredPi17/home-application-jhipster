@@ -2,7 +2,12 @@
     "fluentMethods": true,
     "clientRootFolder": "",
     "relationships": [],
-    "fields": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
     "changelogDate": "20190325163348",
     "dto": "no",
     "searchEngine": false,

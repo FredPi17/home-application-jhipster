@@ -3,8 +3,11 @@
         <span jhiTranslate="homeApplicationApp.meteo.home.title">Meteo</span>
         <div class="btn-group float-right" role="group" aria-label="Basic example">
             <button type="button" class="btn btn-secondary disabled" [routerLink]="['/meteo']">Météo</button>
-            <button type="button" class="btn btn-secondary" routerLinkActive="active" [routerLink]="['/courbes']">Courbes</button>
-            <button type="button" class="btn btn-secondary" routerLinkActive="active" [routerLink]="['/ville']">Ville</button>
+            <button type="button" class="btn btn-secondary" routerLinkActive="active" [routerLink]="['/courbes']">
+                Courbes
+            </button>
+            <button type="button" class="btn btn-secondary" routerLinkActive="active" [routerLink]="['/ville']">Ville
+            </button>
         </div>
     </h2>
     <jhi-alert></jhi-alert>
@@ -12,56 +15,224 @@
 
     <div [ngSwitch]="isAuthenticated()">
         <div *ngSwitchCase="true">
-
-    <div class="row">
-        <div class="col-md-6 text-center">
-            <div class="card" style="margin-bottom: 20px;">
-                <div class="card-header ">Température salon</div>
-                <div class="card-body">{{thingspeakResponseSalon['0']['field1']}}°C</div>
-                <div class="card-footer">{{thingspeakResponseSalon['0']['created_at']}}</div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-md-12 col-12">
+                        <div class="card border-0 box-shadow-0">
+                            <div class="card-content">
+                                <div class="weather-date position-relative">
+                                    <div class="card-body bg-lighten-2 bg-warning">
+                                        <div class="text-center">
+                                            <img src="../../../content/images/meteo/living-room.svg"
+                                                 style="width: 40%; height: auto;">
+                                        </div>
+                                        <div class="weather-details text-center">
+                                            <span class="font-medium-4 text-bold-500 blue-grey darken-4">Salon</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-0 border-0">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered mb-0" style="width: 100%;">
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="details-left float-left">
+                                                        <span
+                                                            class="font-small-1 grey text-bold-600 block">Température</span>
+                                                            <span
+                                                                class="text-bold-500">{{thingspeakResponseSalon['0']['field1']}}
+                                                                °C</span>
+                                                        </div>
+                                                        <div class="float-right align-middle">
+                                                            <img src="../../../content/images/ville/thermometer.svg"
+                                                                 width="16" height="16"/>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="details-left float-left">
+                                                        <span
+                                                            class="font-small-1 grey text-bold-600 block">Humidité</span>
+                                                            <span
+                                                                class="text-bold-500">{{thingspeakResponseSalon['0']['field2']}}
+                                                                %</span>
+                                                        </div>
+                                                        <div class="float-right align-middle">
+                                                            <img src="../../../content/images/ville/humidity.svg" width="16"
+                                                                 height="16"/>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-12 col-12">
+                        <div class="card border-0 box-shadow-0">
+                            <div class="card-content">
+                                <div class="weather-date position-relative">
+                                    <div class="card-body bg-blue-grey bg-lighten-2">
+                                        <div class="text-center">
+                                            <img src="../../../content/images/meteo/work-station.svg"
+                                                 style="width: 40%; height: auto;">
+                                        </div>
+                                        <div class="weather-details text-center">
+                                            <span class="font-medium-4 text-bold-500 blue-grey darken-4">Bureau</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-0 border-0">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered mb-0" style="width: 100%;">
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="details-left float-left">
+                                                        <span
+                                                            class="font-small-1 grey text-bold-600 block">Température</span>
+                                                            <span
+                                                                class="text-bold-500">{{thingspeakResponseBureau['0']['field1']}}
+                                                                °C</span>
+                                                        </div>
+                                                        <div class="float-right align-middle">
+                                                            <img src="../../../content/images/ville/thermometer.svg"
+                                                                 width="16" height="16"/>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="details-left float-left">
+                                                        <span
+                                                            class="font-small-1 grey text-bold-600 block">Humidité</span>
+                                                            <span
+                                                                class="text-bold-500">{{thingspeakResponseBureau['0']['field2']}}
+                                                                %</span>
+                                                        </div>
+                                                        <div class="float-right align-middle">
+                                                            <img src="../../../content/images/ville/humidity.svg" width="16"
+                                                                 height="16"/>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-12 col-12">
+                        <div class="card border-0 box-shadow-0">
+                            <div class="card-content">
+                                <div class="weather-date position-relative">
+                                    <div class="card-body bg-blue-grey bg-lighten-2">
+                                        <div class="text-center">
+                                            <img
+                                                src="../../../content/images/meteo/logout-house-symbol-with-arrow-pointing-out-to-right.svg"
+                                                style="width: 40%; height: auto;">
+                                        </div>
+                                        <div class="weather-details text-center">
+                                            <span class="font-medium-4 text-bold-500 blue-grey darken-4">Extérieur</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-0 border-0">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered mb-0" style="width: 100%;">
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="details-left float-left">
+                                                        <span
+                                                            class="font-small-1 grey text-bold-600 block">Température</span>
+                                                            <span
+                                                                class="text-bold-500">{{thingspeakResponseExterieur['0']['field1']}}
+                                                                °C</span>
+                                                        </div>
+                                                        <div class="float-right align-middle">
+                                                            <img src="../../../content/images/ville/thermometer.svg"
+                                                                 width="16" height="16"/>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="details-left float-left">
+                                                        <span
+                                                            class="font-small-1 grey text-bold-600 block">Humidité</span>
+                                                            <span
+                                                                class="text-bold-500">{{thingspeakResponseExterieur['0']['field2']}}
+                                                                %</span>
+                                                        </div>
+                                                        <div class="float-right align-middle">
+                                                            <img src="../../../content/images/ville/humidity.svg" width="16"
+                                                                 height="16"/>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-md-12 col-12">
+                        <div class="card border-0 box-shadow-0">
+                            <div class="card-content">
+                                <div class="weather-date position-relative">
+                                    <div class="card-body bg-primary bg-lighten-2">
+                                        <div class="text-center">
+                                            <img src="../../../content/images/meteo/database.svg"
+                                                 style="width: 40%; height: auto;">
+                                        </div>
+                                        <div class="weather-details text-center">
+                                            <span class="font-medium-4 text-bold-500 blue-grey darken-4">Serveur</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer p-0 border-0">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered mb-0" style="width: 100%;">
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="details-left float-left">
+                                                        <span
+                                                            class="font-small-1 grey text-bold-600 block">Température</span>
+                                                            <span
+                                                                class="text-bold-500">{{thingspeakResponseServeur['0']['field1']}}
+                                                                °C</span>
+                                                        </div>
+                                                        <div class="float-right align-middle">
+                                                            <img src="../../../content/images/ville/thermometer.svg"
+                                                                 width="16" height="16"/>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="details-left float-left">
+                                                        <span
+                                                            class="font-small-1 grey text-bold-600 block">Humidité</span>
+                                                            <span
+                                                                class="text-bold-500">{{thingspeakResponseServeur['0']['field2']}}
+                                                                %</span>
+                                                        </div>
+                                                        <div class="float-right align-middle">
+                                                            <img src="../../../content/images/ville/humidity.svg" width="16"
+                                                                 height="16"/>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
             </div>
-            <div class="card" style="margin-bottom: 20px;">
-                <div class="card-header">Température extérieure</div>
-                <div class="card-body">{{thingspeakResponseExterieur['0']['field1']}}°C</div>
-                <div class="card-footer">{{thingspeakResponseExterieur['0']['created_at']}}</div>
-            </div>
-            <div class="card" style="margin-bottom: 20px;">
-                <div class="card-header">Température bureau</div>
-                <div class="card-body">{{thingspeakResponseBureau['0']['field1']}}°C</div>
-                <div class="card-footer">{{thingspeakResponseBureau['0']['created_at']}}</div>
-            </div>
-            <div class="card">
-                <div class="card-header">Température serveur</div>
-                <div class="card-body">{{thingspeakResponseServeur['0']['field1']}}°C</div>
-                <div class="card-footer">{{thingspeakResponseServeur['0']['created_at']}}</div>
-            </div>
-        </div>
-
-        <div class="col-md-6 text-center">
-            <div class="card" style="margin-bottom: 20px;">
-                <div class="card-header">Humidité salon</div>
-                <div class="card-body">{{thingspeakResponseSalon['0']['field2']}}%</div>
-                <div class="card-footer">{{thingspeakResponseSalon['0']['created_at']}}</div>
-            </div>
-            <div class="card" style="margin-bottom: 20px;">
-                <div class="card-header">Humidité extérieure</div>
-                <div class="card-body">{{thingspeakResponseExterieur['0']['field2']}}%</div>
-                <div class="card-footer">{{thingspeakResponseExterieur['0']['created_at']}}</div>
-            </div>
-            <div class="card" style="margin-bottom: 20px;">
-                <div class="card-header">Humidité bureau</div>
-                <div class="card-body">{{thingspeakResponseServeur['0']['field2']}}%</div>
-                <div class="card-footer">{{thingspeakResponseServeur['0']['created_at']}}</div>
-            </div>
-            <div class="card">
-                <div class="card-header">Humidité serveur</div>
-                <div class="card-body">{{thingspeakResponseBureau['0']['field2']}}%</div>
-                <div class="card-footer">{{thingspeakResponseBureau['0']['created_at']}}</div>
-            </div>
+            <div *ngSwitchCase="false" [ngSwitch]="redirect()"></div>
         </div>
     </div>
-        </div>
-        <div *ngSwitchCase="false" [ngSwitch]="redirect()">
-
-        </div>
-</div>

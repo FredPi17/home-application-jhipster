@@ -2,19 +2,20 @@
     "homeApplicationApp": {
         "ville": {
             "home": {
-                "title": "Ville",
-                "createLabel": "Créer un nouveau Ville",
-                "createOrEditLabel": "Créer ou éditer un Ville"
+                "title": "Villes",
+                "addLabel": "Ajouter une nouvelle ville",
+                "createOrEditLabel": "Créer ou éditer une ville"
             },
-            "created": "Un nouveau Ville a été créé avec l'identifiant {{ param }}",
-            "updated": "Le Ville avec l'identifiant {{ param }} a été mis à jour",
-            "deleted": "Le Ville avec l'identifiant {{ param }} a été supprimé",
+            "created": "Une nouvelle ville a été créé avec l'identifiant {{ param }}",
+            "updated": "La ville avec l'identifiant {{ param }} a été mise à jour",
+            "deleted": "La ville avec l'identifiant {{ param }} a été supprimée",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le Ville {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer la ville {{ id }} ?"
             },
             "detail": {
                 "title": "Ville"
-            }
+            },
+            "name": "Name"
         }
     }
 }

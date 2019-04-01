@@ -15,6 +15,10 @@ import { RouterModule } from '@angular/router';
             {
                 path: 'ville',
                 loadChildren: './ville/ville.module#HomeApplicationVilleModule'
+            },
+            {
+                path: 'cameras',
+                loadChildren: './cameras/cameras.module#HomeApplicationCamerasModule'
             }
             /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
         ])

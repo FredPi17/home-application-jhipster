@@ -8,6 +8,7 @@
     <include file="config/liquibase/changelog/20190319065222_added_entity_Meteo.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190319105014_added_entity_Courbes.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190325163348_added_entity_Ville.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190401091832_added_entity_Cameras.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

@@ -41,6 +41,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = HomeApplicationApp.class)
 public class VilleResourceIntTest {
 
+    private static final String DEFAULT_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_NAME = "BBBBBBBBBB";
+
     @Autowired
     private VilleRepository villeRepository;
 
@@ -85,7 +88,8 @@ public class VilleResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Ville createEntity(EntityManager em) {
-        Ville ville = new Ville();
+        Ville ville = new Ville()
+            .name(DEFAULT_NAME);
         return ville;
     }
 
@@ -109,6 +113,7 @@ public class VilleResourceIntTest {
         List<Ville> villeList = villeRepository.findAll();
         assertThat(villeList).hasSize(databaseSizeBeforeCreate + 1);
         Ville testVille = villeList.get(villeList.size() - 1);
+        assertThat(testVille.getName()).isEqualTo(DEFAULT_NAME);
     }
 
     @Test
@@ -140,7 +145,8 @@ public class VilleResourceIntTest {
         restVilleMockMvc.perform(get("/api/villes?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(ville.getId().intValue())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(ville.getId().intValue())))
+            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())));
     }
     
     @Test
@@ -153,7 +159,8 @@ public class VilleResourceIntTest {
         restVilleMockMvc.perform(get("/api/villes/{id}", ville.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(ville.getId().intValue()));
+            .andExpect(jsonPath("$.id").value(ville.getId().intValue()))
+            .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()));
     }
 
     @Test
@@ -176,6 +183,8 @@ public class VilleResourceIntTest {
         Ville updatedVille = villeRepository.findById(ville.getId()).get();
         // Disconnect from session so that the updates on updatedVille are not directly saved in db
         em.detach(updatedVille);
+        updatedVille
+            .name(UPDATED_NAME);
 
         restVilleMockMvc.perform(put("/api/villes")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -186,6 +195,7 @@ public class VilleResourceIntTest {
         List<Ville> villeList = villeRepository.findAll();
         assertThat(villeList).hasSize(databaseSizeBeforeUpdate);
         Ville testVille = villeList.get(villeList.size() - 1);
+        assertThat(testVille.getName()).isEqualTo(UPDATED_NAME);
     }
 
     @Test

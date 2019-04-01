@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { JhiLanguageService } from 'ng-jhipster';
 import { JhiLanguageHelper } from 'app/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { HomeApplicationSharedModule } from 'app/shared';
 import {
     VilleComponent,
@@ -17,7 +17,7 @@ import {
 const ENTITY_STATES = [...villeRoute, ...villePopupRoute];
 
 @NgModule({
-    imports: [HomeApplicationSharedModule, RouterModule.forChild(ENTITY_STATES), FontAwesomeModule],
+    imports: [HomeApplicationSharedModule, RouterModule.forChild(ENTITY_STATES)],
     declarations: [VilleComponent, VilleDetailComponent, VilleUpdateComponent, VilleDeleteDialogComponent, VilleDeletePopupComponent],
     entryComponents: [VilleComponent, VilleUpdateComponent, VilleDeleteDialogComponent, VilleDeletePopupComponent],
     providers: [{ provide: JhiLanguageService, useClass: JhiLanguageService }],

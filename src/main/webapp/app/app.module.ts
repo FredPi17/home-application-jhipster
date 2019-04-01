@@ -20,6 +20,7 @@ import { HomeApplicationEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
+import { JhiAddCityModalComponent } from 'app/entities/ville/modal-add-city.component';
 
 @NgModule({
     imports: [
@@ -40,7 +41,15 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         HomeApplicationEntityModule,
         HomeApplicationAppRoutingModule
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+    declarations: [
+        JhiMainComponent,
+        NavbarComponent,
+        ErrorComponent,
+        PageRibbonComponent,
+        ActiveMenuDirective,
+        FooterComponent,
+        JhiAddCityModalComponent
+    ],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
@@ -63,6 +72,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
             multi: true
         }
     ],
+    entryComponents: [JhiAddCityModalComponent],
     bootstrap: [JhiMainComponent]
 })
 export class HomeApplicationAppModule {
