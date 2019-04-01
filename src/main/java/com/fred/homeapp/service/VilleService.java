@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -81,9 +82,9 @@ public class VilleService {
      * @param longitude longitude of the city
      * @return the string of the api call
      */
-    public String getDataFromVille(String latitude, String longitude, String cityName) throws Exception {
+    public String getDataFromVille(String latitude, String longitude, String cityName) throws IOException {
         URL url;
-        if (cityName != "") {
+        if (cityName.equals("")) {
             url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=da5bb7fa6e69c14a816b417bfb2fe11e&units=metric");
         }
         else {
@@ -106,7 +107,6 @@ public class VilleService {
         String line = null;
         while ((line = br.readLine()) != null) {
             output.append(line + "\n");
-            //System.out.println(line);
         }
         String json = output.toString();
         con.disconnect();

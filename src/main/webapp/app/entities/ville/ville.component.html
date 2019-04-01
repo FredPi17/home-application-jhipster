@@ -31,7 +31,7 @@
                         <div class="weather-date position-relative">
                             <div class="card-body bg-blue-grey bg-lighten-2">
                                 <div class="text-center">
-                                    <img src="{{weatherCityObject.Logo}}" style="width: 40%; height: auto;">
+                                    <img src="{{weatherCityObject.Logo}}" style="width: 40%; height: auto;" alt="logo-meteo">
                                 </div>
                                 <div class="weather-details text-center">
                                     <span class="font-medium-4 text-bold-500 blue-grey darken-4">{{weatherCityObject.Name}}</span>
@@ -48,7 +48,7 @@
                                                     <span class="text-bold-500">{{weatherCityObject.WindSpeed}}KM/h</span>
                                                 </div>
                                                 <div class="float-right align-middle">
-                                                    <img src="../../../content/images/ville/wind.svg" width="16" height="16"/>
+                                                    <img src="../../../content/images/ville/wind.svg" width="16" height="16" alt="logo-vent"/>
                                                 </div>
                                             </td>
                                             <td>
@@ -57,7 +57,7 @@
                                                     <span class="text-bold-500">{{weatherCityObject.Sunrise | date: 'dd/MM/yyyy - hh:mm '}}</span>
                                                 </div>
                                                 <div class="float-right align-middle">
-                                                    <img src="../../../content/images/ville/sunrise.svg" width="16" height="16"/>
+                                                    <img src="../../../content/images/ville/sunrise.svg" width="16" height="16" alt="logo-levee-soleil"/>
                                                 </div>
                                             </td>
                                             <td>
@@ -66,7 +66,7 @@
                                                     <span class="text-bold-500">{{weatherCityObject.Sunset | date: 'dd/MM/yyyy - hh:mm '}}</span>
                                                 </div>
                                                 <div class="float-right align-middle">
-                                                    <img src="../../../content/images/ville/sunset.svg" width="16" height="16"/>
+                                                    <img src="../../../content/images/ville/sunset.svg" width="16" height="16" alt="logo-couche-soleil"/>
                                                 </div>
                                             </td>
                                         </tr>
@@ -77,7 +77,7 @@
                                                     <span class="text-bold-500">{{weatherCityObject.MinTemperature}}°C</span>
                                                 </div>
                                                 <div class="float-right align-middle">
-                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16" alt="logo-temperature-min"/>
                                                 </div>
                                             </td>
                                             <td>
@@ -86,7 +86,7 @@
                                                     <span class="text-bold-500">{{weatherCityObject.Temperature}}°C</span>
                                                 </div>
                                                 <div class="float-right align-middle">
-                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16" alt="logo-temperature-actuelle"/>
                                                 </div>
                                             </td>
                                             <td>
@@ -95,7 +95,7 @@
                                                     <span class="text-bold-500">{{weatherCityObject.MaxTemperature}}°C</span>
                                                 </div>
                                                 <div class="float-right align-middle">
-                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16" alt="logo-temperature-max"/>
                                                 </div>
                                             </td>
                                         </tr>
@@ -118,7 +118,7 @@
                         <div class="weather-date position-relative">
                             <div class="card-body bg-blue-grey bg-lighten-2">
                                 <div class="text-center">
-                                    <img src="{{weather.Logo}}" style="width: 40%; height: auto;">
+                                    <img src="{{weather.Logo}}" style="width: 40%; height: auto;" alt="logo-meteo-ville">
                                 </div>
                                 <div class="weather-details text-center">
                                     <span class="font-medium-4 text-bold-500 blue-grey darken-4">{{weather.Name}}</span>
@@ -135,7 +135,7 @@
                                                     <span class="text-bold-500">{{weather.WindSpeed}}KM/h</span>
                                                 </div>
                                                 <div class="float-right align-middle">
-                                                    <img src="../../../content/images/ville/wind.svg" width="16" height="16"/>
+                                                    <img src="../../../content/images/ville/wind.svg" width="16" height="16" alt="logo-vent"/>
                                                 </div>
                                             </td>
                                             <td>
@@ -144,7 +144,7 @@
                                                     <span class="text-bold-500">{{weather.Sunrise | date: 'dd/MM/yyyy - hh:mm '}}</span>
                                                 </div>
                                                 <div class="float-right align-middle">
-                                                    <img src="../../../content/images/ville/sunrise.svg" width="16" height="16"/>
+                                                    <img src="../../../content/images/ville/sunrise.svg" width="16" height="16" alt="logo-levee-soleil"/>
                                                 </div>
                                             </td>
                                             <td>
@@ -153,7 +153,7 @@
                                                     <span class="text-bold-500">{{weather.Sunset | date: 'dd/MM/yyyy - hh:mm '}}</span>
                                                 </div>
                                                 <div class="float-right align-middle">
-                                                    <img src="../../../content/images/ville/sunset.svg" width="16" height="16"/>
+                                                    <img src="../../../content/images/ville/sunset.svg" width="16" height="16" alt="logo-couche-soleil"/>
                                                 </div>
                                             </td>
                                         </tr>
@@ -164,7 +164,7 @@
                                                     <span class="text-bold-500">{{weather.MinTemperature}}°C</span>
                                                 </div>
                                                 <div class="float-right align-middle">
-                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16" alt="logo-temperature-min"/>
                                                 </div>
                                             </td>
                                             <td>
@@ -173,7 +173,7 @@
                                                     <span class="text-bold-500">{{weather.Temperature}}°C</span>
                                                 </div>
                                                 <div class="float-right align-middle">
-                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16" alt="logo-temperature-actuelle"/>
                                                 </div>
                                             </td>
                                             <td>
@@ -182,7 +182,7 @@
                                                     <span class="text-bold-500">{{weather.MaxTemperature}}°C</span>
                                                 </div>
                                                 <div class="float-right align-middle">
-                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16"/>
+                                                    <img src="../../../content/images/ville/thermometer.svg" width="16" height="16" alt="logo-temperature-max"/>
                                                 </div>
                                             </td>
                                         </tr>
@@ -201,7 +201,7 @@
                         <div class="weather-date position-relative">
                             <div class="card-body bg-lighten-2">
                                 <div class="text-center">
-                                    <img src="../../../content/images/ville/plus.svg" width="50" height="50" (click)="addCity()">
+                                    <img src="../../../content/images/ville/plus.svg" width="50" height="50" (click)="addCity()" alt="logo-plus">
                                 </div>
                             </div>
                         </div>

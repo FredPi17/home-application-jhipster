@@ -1,19 +1,16 @@
 package com.fred.homeapp.service;
 
-import com.fasterxml.jackson.core.JsonParser;
 import com.fred.homeapp.domain.Meteo;
 import com.fred.homeapp.repository.MeteoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import org.springframework.boot.configurationprocessor.json.JSONObject;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 import java.util.Optional;
@@ -84,7 +81,7 @@ public class MeteoService {
      * @param nb int to know if we want one or multiple data
      * @return json object of returned values
      */
-    public String getThingspeak(String place, int nb) throws Exception {
+    public String getThingspeak(String place, int nb) throws IOException {
         URL url;
         switch (place){
             case "bureau":
@@ -120,7 +117,6 @@ public class MeteoService {
         String line = null;
         while ((line = br.readLine()) != null) {
             output.append(line + "\n");
-            //System.out.println(line);
         }
         String json = output.toString();
         con.disconnect();
