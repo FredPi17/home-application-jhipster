@@ -4,7 +4,6 @@ import com.fred.homeapp.domain.Ville;
 import com.fred.homeapp.repository.VilleRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -85,10 +84,10 @@ public class VilleService {
     public String getDataFromVille(String latitude, String longitude, String cityName) throws IOException {
         URL url;
         if (cityName.equals("")) {
-            url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=da5bb7fa6e69c14a816b417bfb2fe11e&units=metric");
+            url = new URL("http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude + "&appid=da5bb7fa6e69c14a816b417bfb2fe11e&units=metric");
         }
         else {
-            url = new URL("http://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&appid=da5bb7fa6e69c14a816b417bfb2fe11e&units=metric");
+            url = new URL("http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=da5bb7fa6e69c14a816b417bfb2fe11e&units=metric");
         }
 
         HttpURLConnection con = (HttpURLConnection) url.openConnection();

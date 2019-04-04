@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { SERVER_API_URL } from 'app/app.constants';
 import { createRequestOption } from 'app/shared';
-import { IVille, Ville } from 'app/shared/model/ville.model';
+import { IVille } from 'app/shared/model/ville.model';
 
 type EntityResponseType = HttpResponse<IVille>;
 type EntityArrayResponseType = HttpResponse<IVille[]>;
@@ -41,7 +41,7 @@ export class VilleService {
     }
 
     getByCityName(cityName: string): Observable<any> {
-        return this.http.get<any>(`${this.resourceUrl}/getVille/${cityName}`, { observe: 'response' });
+        return this.http.get<any>(`${this.resourceUrl}/getVille/cityName/${cityName}`, { observe: 'response' });
     }
 
     get(): Observable<any> {

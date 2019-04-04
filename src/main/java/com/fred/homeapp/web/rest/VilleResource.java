@@ -1,4 +1,5 @@
 package com.fred.homeapp.web.rest;
+
 import com.fred.homeapp.domain.Ville;
 import com.fred.homeapp.service.VilleService;
 import com.fred.homeapp.web.rest.errors.BadRequestAlertException;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -128,7 +128,7 @@ public class VilleResource {
      * @return data for the city
      * @throws Exception
      */
-    @GetMapping("/villes/getVille/{cityName}")
+    @GetMapping("/villes/getVille/cityName/{cityName}")
     public String getDataFromCityName(@PathVariable String cityName) throws Exception {
         log.debug("REST request to get weather for: {}", cityName);
         return villeService.getDataFromVille("", "", cityName);
